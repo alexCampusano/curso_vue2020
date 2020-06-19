@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 1 vue</title>
+</head>
+<body>
+
+	<div id="app">
+		
+		<h1>{{titulo}}</h1>
+		<input type="text" name="mermel" id="mermel" v-model="nuevaMerme" v-on:keyup.enter="agregarMerme">
+		<button v-on:click="agregarMerme">Agregar</button>
+		<hr>
+		<ul>
+			<li v-for="merme of mermeladas">
+				<input type="number" name="" id="" v-model.number="merme.cantidad">
+				de sabor <strong>{{merme.nombre}}</strong>
+				<button @click="merme.cantidad++">+</button>
+				<span v-if="merme.cantidad === 0">, no quedan</span>
+			</li>
+		</ul>
+		<h4>Total de mermeladas {{sumarMerme}}</h4>
+		
+		
+	</div>
+	
+
+    <!-- cdn vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- mi JS -->
+    <script src="01.js"></script>
+</body>
+</html>
